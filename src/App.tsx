@@ -207,7 +207,7 @@ const ToDoFixed: React.FC = () => {
 
             <Segment>
                 <Header as="h3" block>
-                    Acceptance Criteria
+                    How to use
                 </Header>
                 <List bulleted>
                     <List.Item>
@@ -220,7 +220,7 @@ const ToDoFixed: React.FC = () => {
                     </List.Item>
                     <List.Item>
                         <strong>Toggle Complete:</strong> Clicking the checkbox toggle marks
-                        a task as complete/incomplete and updates its style.
+                        a task as complete/incomplete and updates its style (overstrike).
                     </List.Item>
                     <List.Item>
                         <strong>Delete Item:</strong> Clicking the delete button removes the
