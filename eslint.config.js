@@ -33,6 +33,11 @@ export default [
       // example overrides
       "react/prop-types": "off", // TypeScript handles props
       "@typescript-eslint/explicit-function-return-type": "off",
+      "react/react-in-jsx-scope": "off",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
+      ],
     },
   },
 ];
