@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# todo_fastapi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React + OpenAPI application to satisfy the request:
 
-Currently, two official plugins are available:
+> Please create a frontend application that uses an open API backend.
+> Then we will ask for a change on the fly during the call.
+> _(paraphrased)_
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Solution Description
+* The frontend is a React app that was scaffolded with vite.
+  * The React code is in the project root
+* The backend is a python/FastAPI app
+  * The backend code is in the `/backend` folder.
+* The frontend app is a simple **TO DO** app
+* The code layout/styling is from [semantic-ui-react](https://react.semantic-ui.com/)
 
-## React Compiler
+## Build Instructions for the Terminal
+1. Install Node 23 and make active (`nvm use` will help)
+2. Have two open terminals
+2. In terminal A (project root): `yarn` or `npm i`
+3. In terminal B (`/backend`): Create and activate a python environment, e.g. 
+   * `uv init` and 
+   * `source .venv/bin/activate`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run instructions
+2. In terminal A (project root): `yarn dev` or `npm run dev`
+3. In terminal B (`/backend`): `uvicorn app:app --reload`
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Prove successful run/build
+* http://localhost:5171 loads and the `TO DO` UI is visible
+* http://localhost:8000/docs loads and shows the API
+* In the UI, test adding, removing and completing tasks
