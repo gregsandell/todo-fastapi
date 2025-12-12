@@ -14,6 +14,7 @@ import {
     MenuMenu,
     Segment,
 } from "semantic-ui-react";
+import styles from "./styles.module.css"
 
 interface Todo {
     id: number;
@@ -21,7 +22,7 @@ interface Todo {
     completed: boolean;
 }
 
-const API_BASE = import.meta.env.REACT_APP_API_BASE || ""; // e.g. "" or "http://localhost:8000"
+const API_BASE: string = "http://localhost:8000" // e.g. "" or "http://localhost:8000"
 
 const ToDoFixed: React.FC = () => {
     const [todos, setTodos] = useState<Todo[]>([]);
@@ -120,7 +121,7 @@ const ToDoFixed: React.FC = () => {
     });
 
     return (
-        <Container className="todoContainer">
+        <Container className={styles.todoContainer}>
             <Header as="h1" textAlign="center">
                 Todo List
             </Header>

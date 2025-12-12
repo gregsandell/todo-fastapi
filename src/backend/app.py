@@ -34,7 +34,7 @@ app = FastAPI(title="Todo API", version="1.0.0")
 # Allow local React dev server (adjust origin for production)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # React dev origin
+    allow_origins=["http://localhost:5173"],  # React dev origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
