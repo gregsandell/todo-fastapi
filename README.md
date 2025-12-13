@@ -14,7 +14,8 @@ Repo location:  https://github.com/gregsandell/todo-fastapi
 * The backend is a python/FastAPI app
   * The backend code is in the `/backend` folder.
 * The frontend app is a simple **TO DO** app
-* The code layout/styling is from [semantic-ui-react](https://react.semantic-ui.com/)
+* The data is persisted in the backend with FastAPI's built-in Sqlite3 database
+* The UI layout/styling uses [semantic-ui-react](https://react.semantic-ui.com/)
 
 
 ## Assumptions:  
